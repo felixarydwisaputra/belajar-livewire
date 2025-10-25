@@ -29,7 +29,7 @@ class UserRegistForm extends Component
         $validated = $this->validate();
 
         if ($this->avatar) {
-            $validated['avatar'] = $this->avatar->store('avatar', 'public');
+            $validated['avatar'] = $this->avatar->store('avatar', config('filesystems.default_public_disk'));
         }
 
         User::create([
