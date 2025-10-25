@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Livewire\Attributes\Title;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -24,6 +25,7 @@ class UserRegistForm extends Component
     #[Validate('max:5000')]
     public $avatar = null;
 
+    #[Title('Home Page')]
     public function createNewUser()
     {
         $validated = $this->validate();
