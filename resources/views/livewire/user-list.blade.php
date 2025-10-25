@@ -24,7 +24,7 @@
                          <div class="flex items-center gap-5">
                              <div
                                  class="w-12 h-12 object-contain block rounded-full overflow-hidden border-2 border-gray-300">
-                                 <img src="{{ $user->avatar ?? asset('img/default.jpg') }}"
+                                 <img src="{{ $user->avatar ? Storage::url($user->avatar) : asset('img/default.jpg') }}"
                                      class="w-12 h-12 object-cover block" alt="profile picture">
                              </div>
                              <div class=" text-start">
